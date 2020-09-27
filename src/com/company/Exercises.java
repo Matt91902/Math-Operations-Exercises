@@ -12,11 +12,26 @@ public class Exercises {
     public static void timeLeft(int currHour, int currMin, int depHour, int depMin)
     {
         //PRINT the time left here in hours and minutes
+        int hour = depHour-currHour;
+        int min = depMin-currMin;
+        if(min<0) {
+        min += 60;
+        hour -= 1;
+    }
+        System.out.println(hour+" hours "+min+" minutes");
     }
     public static int dayOfWeek(int daysOfWeek1, int day)
     {
 
         // returns an integer corresponding to the day of the week
+        int ReturnDay = day%7+daysOfWeek1-1;
+        if(ReturnDay<0) {
+            ReturnDay += 7;
+        }
+        if(ReturnDay>7) {
+            ReturnDay -= 7;
+        }
+        return ReturnDay;
     }
 
 
